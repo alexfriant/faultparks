@@ -7,8 +7,13 @@
     <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
     <script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"></script>
     <style type="text/css">
+    body, html {
+      height: 99%;
+    }
     #map {
-        height: 600px;
+      height: 100%;
+      width: 100%;
+      background: blue;
     }
     </style>
 </head>
@@ -17,29 +22,29 @@
   <script src="data/parks.js"></script>
   <script src="data/faults.js"></script>
   <script type="text/javascript">
-    var map = L.map('map').setView([44.05, -121.30], 11);
-    var layer = new L.StamenTileLayer("toner-lite");
-    map.addLayer(layer);
-    L.geoJson(parks, {
-      style: {
-        "fillColor": "green",
-        "weight": 0,
-        "fillOpacity": 0.6
-      },
-      onEachFeature: function (feature, layer) {
-        layer.bindPopup(feature.properties.Park_Name);
-      }
-    }).addTo(map);
-    L.geoJson(faults, {
-      style: {
-        "color": "red",
-        "weight": 1.5,
-        "opacity": .8
-      },
-      onEachFeature: function (feature, layer) {
-        layer.bindPopup(feature.properties.NAME);
-      }
-    }).addTo(map);
+//    var map = L.map('map').setView([44.05, -121.30], 11);
+//    var layer = new L.StamenTileLayer("toner-lite");
+//    map.addLayer(layer);
+//    L.geoJson(parks, {
+//      style: {
+//        "fillColor": "green",
+//        "weight": 0,
+//        "fillOpacity": 0.6
+//      },
+//      onEachFeature: function (feature, layer) {
+//        layer.bindPopup(feature.properties.Park_Name);
+//      }
+//    }).addTo(map);
+//    L.geoJson(faults, {
+//      style: {
+//        "color": "red",
+//        "weight": 1.5,
+//        "opacity": .8
+//      },
+//      onEachFeature: function (feature, layer) {
+//        layer.bindPopup(feature.properties.NAME);
+//      }
+//    }).addTo(map);
   </script>
 </body>
 </html>
